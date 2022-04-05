@@ -13,6 +13,14 @@ class About extends React.Component {
     }
     this.timer = null;
   }
+
+  // 还有一种传参是下载events包，听过派发事件，监听事件来传参
+
+  // 声明组件支持context传参  这里定义类型就可取值
+  static contextTypes = {
+    c: propTypes.bool,
+    u: propTypes.number
+  }
   // static propTypes = {
   //   a: propTypes.bool,
   //   b: propTypes.func.isRequired
@@ -24,59 +32,39 @@ class About extends React.Component {
   // }
 
   componentDidMount() {
-    this.getRandomColor();
+    console.log(this);
   }
 
   componentWillUnmount() {
-    this.timer && clearTimeout(this.timer);
-  }
-
-  getRandomColor = () =>{   
-      this.timer && clearTimeout(this.timer);
-
-      const r = Math.floor(Math.random()*255);
-      const g = Math.floor(Math.random()*255);
-      const b = Math.floor(Math.random()*255);
-      const color = 'rgba('+ r +','+ g +','+ b +',0.9)';
-      console.log(color);
-      this.setState({
-        color
-      });
-
-      this.timer = setTimeout(() => {
-        clearTimeout(this.timer);
-        this.getRandomColor();
-      }, 300);
   }
 
   render() {
-    const {color} = this.state;
     return <>
       <Router>
           {/* this.history.goBack()和this.history.go()不能回退子路由吗 只能回退一级路由？ */}
-        {/* <Link to='/setting'>跳转setting页</Link> */}
+        <Link to='/setting'>跳转setting页</Link>
         
         {/* <Switch> */}
           {/* <Route path='/about/aaa' Component={About}></Route> */}
         {/* </Switch> */}
       </Router>
 
-      <div className='container' style={{color: `${color}`}}>
-        王婧要每天快乐，每天开心！阳光洒落你身。
+      <div className='container'>
+          首页
       </div>
     </>
   }
 }
 
 // 相当于在内部的 static静态方法和属性，自己本身的东西
-About.propTypes = {
-  a: propTypes.bool,
-  b: propTypes.func.isRequired
-}
+// About.propTypes = {
+//   a: propTypes.bool,
+//   b: propTypes.func.isRequired
+// }
 
-About.defaultProps = {
-  a: true,
-  b(){}
-}
+// About.defaultProps = {
+//   a: true,
+//   b(){}
+// }
 
 export default About;

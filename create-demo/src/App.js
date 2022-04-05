@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom';
-
+import protoTypes from 'prop-types';
 import Index from './components/index/index';
 // 这个标签可作为空白容器   类似于包裹两个li  外界是ul标签引用此组件
 // <React.Fragment></React.Fragment>  // <></>是简写 语法糖
@@ -13,6 +13,22 @@ import Index from './components/index/index';
 // }
 
 class App extends React.Component {
+
+  // 都是固定的api名称
+  // context类型  配合getChildContext默认值，下层组件contextTypes取值
+  static childContextTypes = {
+    c: protoTypes.bool,
+    t: protoTypes.number
+  }
+
+  // context默认值
+  getChildContext() {
+    return {
+      c: false,
+      t: 6
+    }
+  }
+
   render() {
     return <>
     {/* BrowserRouter路由不带#号，是history路由，需要配合服务端，因为history路由是get请求
