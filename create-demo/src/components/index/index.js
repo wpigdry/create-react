@@ -32,13 +32,19 @@ class About extends React.Component {
   // }
 
   componentDidMount() {
-    console.log(this);
+    console.log(this.context); // 取context参数
   }
 
   componentWillUnmount() {
   }
 
+  clk() {
+    this.forceUpdate(); // this上自身挂载的强制视图更新函数
+  }
+
   render() {
+    console.log('render');
+
     return <>
       <Router>
           {/* this.history.goBack()和this.history.go()不能回退子路由吗 只能回退一级路由？ */}
@@ -51,6 +57,7 @@ class About extends React.Component {
 
       <div className='container'>
           首页
+          <div onClick={() => this.clk()}>点击</div>
       </div>
     </>
   }
