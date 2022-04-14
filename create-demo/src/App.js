@@ -16,18 +16,18 @@ class App extends React.Component {
 
   // 都是固定的api名称
   // context类型  配合getChildContext默认值，下层组件contextTypes取值
-  static childContextTypes = {
-    c: protoTypes.bool,
-    t: protoTypes.number
-  }
+  // static childContextTypes = {
+  //   c: protoTypes.bool,
+  //   t: protoTypes.number
+  // }
 
   // context默认值
-  getChildContext() {
-    return {
-      c: false,
-      t: 6
-    }
-  }
+  // getChildContext() {
+  //   return {
+  //     c: false,
+  //     t: 6
+  //   }
+  // }
 
   render() {
     return <>

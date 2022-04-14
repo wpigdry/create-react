@@ -8,6 +8,8 @@ class About extends React.Component {
   constructor(arg) {
     super(arg);
 
+    // constructor可以替代WillUnmount  做一些准备工作
+
     this.state = {
       color: ''
     }
@@ -16,11 +18,13 @@ class About extends React.Component {
 
   // 还有一种传参是下载events包，听过派发事件，监听事件来传参
 
+  // context传参  api写法已经过期
+
   // 声明组件支持context传参  这里定义类型就可取值
-  static contextTypes = {
-    c: propTypes.bool,
-    u: propTypes.number
-  }
+  // static contextTypes = {
+  //   c: propTypes.bool,
+  //   u: propTypes.number
+  // }
   // static propTypes = {
   //   a: propTypes.bool,
   //   b: propTypes.func.isRequired
@@ -32,10 +36,17 @@ class About extends React.Component {
   // }
 
   componentDidMount() {
-    console.log(this.context); // 取context参数
+    console.log(`%c${JSON.stringify(this.context)}`, 'background: red;border-radius: 2px;'); // 取context参数
   }
 
-  componentWillUnmount() {
+  getSnapshotBeforeUpdate() {
+    return {
+      flag: true
+    }
+  }
+
+  componentDidUpdate(_a, _b, before) {
+
   }
 
   clk() {
