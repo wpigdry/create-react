@@ -36,10 +36,14 @@ class About extends React.Component {
   // }
 
   componentDidMount() {
+    // console.log(err); // 捕获错误
     console.log(`%c${JSON.stringify(this.context)}`, 'background: red;border-radius: 2px;'); // 取context参数
   }
 
-  getSnapshotBeforeUpdate() {
+  // 渲染前调用，  和旧的willUpdate生命周期冲突
+  // getSnapshotBeforeUpdate() 方法需要与 componentDidUpdate() 方法一起使用，否则会出现错误。
+  getSnapshotBeforeUpdate(preProps, preState) {
+    // 返回值在componentDidUpdate第3个参数接收
     return {
       flag: true
     }

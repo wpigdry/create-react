@@ -29,6 +29,14 @@ class App extends React.Component {
   //   }
   // }
 
+  componentDidMount() {
+  }
+
+  // 只能捕获子组件的错误，本身的不能捕获
+  componentDidCatch(err, info) {
+    console.log(err, info, '发生错误');
+  }
+
   render() {
     return <>
     {/* BrowserRouter路由不带#号，是history路由，需要配合服务端，因为history路由是get请求
