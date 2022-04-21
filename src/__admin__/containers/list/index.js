@@ -1,5 +1,5 @@
 /**
- * @file List组件--接收redux数据
+ * @file List高阶组件--接收redux数据
  */
 
 import {
