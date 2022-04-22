@@ -8,7 +8,7 @@ import list from './list'; // list同时也是state的key
 import nav from './nav'
 console.dir(combineReducers, 'combineReducers');
 
-// 一个页面，一个reducers(区分reducers数据)
+// 一个页面，一个reducers
 export default combineReducers({
     list,
     nav

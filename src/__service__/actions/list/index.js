@@ -20,8 +20,8 @@ export const modAction = data => {
 
 export const listReducersAction = data => {
     return {
-        type: __ADMIN__LIST__REDUCERS, // type为标识，通过不同的标识执行对应的逻辑
-        payload: { // 定义的是reducers中payload的值
+        type: __ADMIN__LIST__REDUCERS,
+        payload: {
             num: data
         }
     }

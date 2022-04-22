@@ -70,10 +70,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-__admin__ 业务线
+### __admin__ 业务线
  -- components  组件
+ -- containers 高阶组件，注入redux数据
  -- actions 触发修改状态
- -- reducers 管理状态
+ -- reducers 根据action管理状态
 
-__service__ 业务线
+### __service__ 业务线
+ -- 复制的__admin__文件夹
  -- components  组件
+ -- containers 高阶组件，注入redux数据
+ -- actions 触发修改状态
+ -- reducers 根据action管理状态
+
+### reducers.js
+一层层合并reducers，最终取创建状态管理树

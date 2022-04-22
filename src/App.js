@@ -3,7 +3,7 @@ import {Provider} from 'react-redux'; // react-redux对redux进行处理，提�
 import store from './store.js';
 
 import List from './__admin__/containers/list';
-import Setting from './__admin__/containers/setting';
+import Setting from './__admin__/components/setting';
 import Nav from './__admin__/containers/nav';
 
 
@@ -25,6 +25,7 @@ class App extends React.Component {
                 <div>
                     <button onClick={this.clkHandel.bind(this)}>父组件点击</button>
                     <div>{b.a}</div>
+                    <List b={b}></List>
                     <List b={b}></List>
                     <Setting></Setting>
                     <Nav/>

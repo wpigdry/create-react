@@ -2,7 +2,7 @@
  * @file List高阶组件--接收redux数据
  */
 
-import {
+ import {
     connect
 } from 'react-redux';
 
@@ -11,7 +11,7 @@ import Nav from '../../components/nav/index';
 import {modAction} from '../../actions/nav';
 
 const mapStateToProps = state => {
-    return state.__admin__.nav;
+    return state.__service__.nav;
 }
 
 const mapStateDispatchToProps = (dispatch, props) => {
