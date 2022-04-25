@@ -21,6 +21,8 @@ const mapStateToProps = state => {
 // 定义事件
 // 组件接收调用，改变reducers的数据，然后再通过顶层数据下灌
 const mapStateDispatchToProps = (dispatch, props) => {
+    // props  在给connect包裹的组件传参时触发
+    // 如 <List b={2}/>
 
     // 所有state是公有的（不论合并了多少次reducers，都会公有），取值可以分reducers取(比如list. nav.)，但是return的方法是每个connect组件私有的，不进行共享
     return {
@@ -33,6 +35,7 @@ const mapStateDispatchToProps = (dispatch, props) => {
             // dispatch({type: __ADMIN__LIST, payload: {num: 6, p: 'ppppppppppp'}})
         },
         subtract(num) {
+            // dispatch的type参数yeke由components的组件来传值，达到传不同的type，触发不同action，执行不同reducers的效果
             dispatch(modAction(--num));
 
             // dispatch({type: 'b', payload: {a: 2}})
