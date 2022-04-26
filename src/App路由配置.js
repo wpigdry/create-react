@@ -51,6 +51,7 @@ class App extends React.Component {
           }}></Route>
           {/* 配置子路由时去除exact严格匹配 否则匹配不到 */}
           <Route path='/index' exact component={Index}></Route>
+          {/* 组件中props中的history location match 是react-router-dom 注入的 */}
         </Switch>
       </Router>
     </>
