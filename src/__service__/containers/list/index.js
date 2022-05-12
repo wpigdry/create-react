@@ -24,6 +24,7 @@ const mapStateDispatchToProps = (dispatch, props) => {
 
     // state是公有的（不论合并了多少次reducers，都会共有），取值可以分reducers取(比如list. nav.)，但是return的方法是每个connect组件私有的，不进行共享
     return {
+        // 看一下B端代码库的接口请求时机和数据处理时机
         add(num) {
             // dispatch触发时所有组件对应的reducers都会执行，reducers根据action来执行逻辑，所以要保证action的唯一性正确性
             dispatch(modAction(++num)); // dispatch执行的action和reducers的action相对应
